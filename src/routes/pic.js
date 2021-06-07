@@ -1,6 +1,6 @@
 
 module.exports = app => {
-  app.get('/api/pic', (req, res) => {
+  app.get('/api/pic/:id', (req, res) => {
     res.json({
       imageBasicInfo: {
         name: 'Test image!',
