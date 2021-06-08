@@ -1,5 +1,7 @@
 # bobolu-backend
 
+Parent repo: [Heavelyn/bobolu](https://github.com/Heavelyn/bobolu)
+
 ## Commands
 
 ```bash
