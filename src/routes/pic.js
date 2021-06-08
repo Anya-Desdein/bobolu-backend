@@ -1,31 +1,8 @@
 
-module.exports = app => {
-  app.get('/api/pic/:id', (req, res) => {
-    res.json({
-      imageBasicInfo: {
-        name: 'Test image!',
-        thumbnailUrl: '/img/test_t.png',
-      },
-      imageDetailInfo: {
-        viewCount: 55,
-        description: 'If you are trying to send a json file you can use streams',
-        imageUrl: '/img/test.png',
-      },
-      score: {
-        integerScore: 9,
-        sameScoreImageCount: 45,
-        voteCount: 32,
-      },
-      imageTags: [
-        {
-          name: 'girl',
-          taggedImageCount: 133,
-        },
-        {
-          name: 'yes',
-          taggedImageCount: 666,
-        }
-      ],
-    });
+module.exports = (app, db) => {
+  app.get('/api/pic/:id', async (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    const pic = await db.getPic(id);
+    res.json(pic);
   });
 }

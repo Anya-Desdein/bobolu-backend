@@ -6,6 +6,6 @@ const routes = [
   require('./routes/create'),
 ];
 
-module.exports = app => {
-  routes.forEach(el => el(app)); 
+module.exports = (app, db) => {
+  routes.forEach(el => el(app, db)); 
 };
